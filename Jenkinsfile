@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage ("Checkout") {
             steps {
-                echo "git https://github.com/alekspka/Amir_Tempreture_V1"
+                git "https://github.com/alekspka/Amir_Tempreture_V1"
             }
         }
 
