@@ -7,7 +7,7 @@ pipeline {
     environment {
     PATH = "c:\\Program File\\Docker\\Docker\\resources\\bin;${env.PATH}"
     DOCKERHUB_CREDENTIALS_ID = "Docker_hub"
-    DOCKERHUB_REPO = "alekspka/temperatureconverter"
+    DOCKERHUB_REPO = "alekspka/tmpcon"
     DOCKER_IMAGE_TAG = "latest"
     }
     stages {
@@ -39,13 +39,13 @@ pipeline {
             jacoco ()
             }
          }
-        stage ("Build Docker Image") {
-            steps {
-                script{
-                docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
-                }
-            }
-        }
+         stage('Build Docker Image') {
+             steps {
+                script {
+                   docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
+                 }
+             }
+         }
         stage ("Push Docker Image to Docker Hub") {
             steps {
                 script {
