@@ -1,26 +1,27 @@
 public class TemperatureConverter {
 
     public static void main(String[] args) {
-        System.out.println("32°F = " + fahrenheitToCelsius(32) + "°C");
+        TemperatureConverter converter = new TemperatureConverter();
+        System.out.println("32°F = " + converter.fahrenheitToCelsius(32) + "°C");
     }
 
-    public static double fahrenheitToCelsius (double fahrenheit) {
+    public double fahrenheitToCelsius (double fahrenheit) {
         return (fahrenheit - 32) / 1.8;
     }
 
-    public static double celsiusToFahrenheit (double celsius) {
+    public double celsiusToFahrenheit (double celsius) {
         return (celsius * 1.8) + 32;
     }
 
-    public static double celsiusToKelvin (double celsius){
+    public double celsiusToKelvin (double celsius){
         return celsius + 273.15;
     }
 
-    public static double kelvinToCelsius (double kelvin){
+    public double kelvinToCelsius (double kelvin){
         return kelvin - 273.15;
     }
 
-    public static boolean isExtremeTemperature (double celsius) {
+    public boolean isExtremeTemperature (double celsius) {
         if (celsius < -40 || celsius > 50) {
             return true;
         }
